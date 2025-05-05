@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dikqpia0nuieu"]
+
+[ext_resource type="Script" uid="uid://cxkf7hc70f0ke" path="res://src/command_object_input.gd" id="1_n14va"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7mycd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(42.1052, 40.6781)
+
+[node name="command object input" type="Sprite2D"]
+self_modulate = Color(0.197144, 0.244324, 0.630397, 1)
+scale = Vector2(0.452381, 0.453846)
+texture = SubResource("CanvasTexture_7mycd")
+region_enabled = true
+region_rect = Rect2(0, 0, 50, 50)
+script = ExtResource("1_n14va")
+
+[node name="command object input area" type="Area2D" parent="."]
+
+[node name="command object input collision" type="CollisionShape2D" parent="command object input area"]
+position = Vector2(0, -0.000488281)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[connection signal="mouse_entered" from="command object input area" to="." method="_set_mouse_over"]
+[connection signal="mouse_exited" from="command object input area" to="." method="_unset_mouse_over"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4003flet622j"]
+
+[ext_resource type="Script" uid="uid://cr8phyjhyqelr" path="res://Main.gd" id="1_jyhfs"]
+[ext_resource type="Script" uid="uid://cfd3r0088d5ty" path="res://src/camera_2d.gd" id="5_tbgi4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0wfyh"]
+
+[node name="root" type="Node2D"]
+script = ExtResource("1_jyhfs")
+
+[node name="background" type="Sprite2D" parent="."]
+self_modulate = Color(0.0792631, 0.0753794, 0.142917, 1)
+position = Vector2(512.03, 359.792)
+scale = Vector2(0.999941, 1.00058)
+texture = SubResource("CanvasTexture_0wfyh")
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 720)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(512, 360)
+script = ExtResource("5_tbgi4")

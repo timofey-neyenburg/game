@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3jjemmtgnjyd"]
+
+[ext_resource type="Script" uid="uid://tj1t1kbwcftx" path="res://src/command_object.gd" id="1_0j55j"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ig7tw"]
+
+[sub_resource type="SystemFont" id="SystemFont_0xm2m"]
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font = SubResource("SystemFont_0xm2m")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(84, 52)
+
+[node name="command object sprite" type="Sprite2D"]
+self_modulate = Color(0.886275, 0.435294, 0.176471, 1)
+scale = Vector2(0.42, 0.433334)
+texture = SubResource("CanvasTexture_ig7tw")
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 120)
+script = ExtResource("1_0j55j")
+
+[node name="command object sprite label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -60.0
+offset_right = -100.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "AND"
+label_settings = SubResource("LabelSettings_h2yge")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="command object area" type="Area2D" parent="."]
+self_modulate = Color(0.57615, 0.217326, 0.265236, 1)
+position = Vector2(-395.238, -946.152)
+scale = Vector2(2.38095, 2.30769)
+
+[node name="command_object_collission" type="CollisionShape2D" parent="command object area"]
+modulate = Color(0.713726, 1, 1, 1)
+self_modulate = Color(0.345098, 1, 1, 1)
+position = Vector2(166, 410)
+shape = SubResource("RectangleShape2D_1bvp3")
+debug_color = Color(0.452707, 0.284945, 0.251053, 0.843137)
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="command object area" to="." method="_is_mouse_over_object"]
+[connection signal="mouse_exited" from="command object area" to="." method="_unset_is_mouse_over_object"]

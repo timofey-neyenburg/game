@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4003flet622j"]
+
+[ext_resource type="Texture2D" uid="uid://di08t3pl48smc" path="res://bg.png" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://tj1t1kbwcftx" path="res://sprite_2d_2.gd" id="2_0xm2m"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ig7tw"]
+
+[sub_resource type="SystemFont" id="SystemFont_0xm2m"]
+font_weight = 999
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font = SubResource("SystemFont_0xm2m")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(576.5, 322.75)
+scale = Vector2(2.32996, 2.34838)
+texture = ExtResource("1_ig7tw")
+metadata/_edit_lock_ = true
+
+[node name="command object" type="Sprite2D" parent="."]
+self_modulate = Color(0.886275, 0.435294, 0.176471, 1)
+position = Vector2(166, 410)
+scale = Vector2(0.42, 0.433334)
+texture = SubResource("CanvasTexture_ig7tw")
+region_enabled = true
+region_rect = Rect2(120, 200, 200, 120)
+script = ExtResource("2_0xm2m")
+
+[node name="Label" type="Label" parent="command object"]
+anchors_preset = -1
+anchor_left = 0.471
+anchor_top = 0.558
+anchor_right = 0.471
+anchor_bottom = 0.558
+offset_left = -146.581
+offset_top = -90.0369
+offset_right = -53.581
+offset_bottom = -30.0369
+text = "AND"
+label_settings = SubResource("LabelSettings_h2yge")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_lock_ = true

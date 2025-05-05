@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4003flet622j"]
+
+[ext_resource type="Script" uid="uid://cr8phyjhyqelr" path="res://Main.gd" id="1_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://di08t3pl48smc" path="res://assets/bg.png" id="2_tbgi4"]
+[ext_resource type="Script" uid="uid://cfd3r0088d5ty" path="res://src/camera_2d.gd" id="5_tbgi4"]
+
+[node name="root" type="Node2D"]
+script = ExtResource("1_jyhfs")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(576.5, 322.75)
+scale = Vector2(2.32996, 2.34838)
+texture = ExtResource("2_tbgi4")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 325)
+script = ExtResource("5_tbgi4")
