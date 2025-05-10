@@ -1,8 +1,11 @@
 extends Line2D
 class_name Joint
 
-func _init(_left_pos: Vector2) -> void:
-	_left_pos = _left_pos
+var input_command: Command
+
+
+func _init(input_command: Command) -> void:
+	var _left_pos = input_command.global_position
 	var _right_pos = get_global_mouse_position()
 	
 	joint_mode = Line2D.LINE_JOINT_ROUND

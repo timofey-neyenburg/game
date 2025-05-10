@@ -25,15 +25,10 @@ region_rect = Rect2(0, 0, 200, 120)
 script = ExtResource("1_0j55j")
 
 [node name="command object sprite label" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = -100.0
 offset_top = -60.0
-offset_right = -100.0
-offset_bottom = -60.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = -30.0
+offset_bottom = -15.0
 text = "AND"
 label_settings = SubResource("LabelSettings_h2yge")
 horizontal_alignment = 1

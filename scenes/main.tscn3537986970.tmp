@@ -10,28 +10,12 @@ script = ExtResource("1_jyhfs")
 
 [node name="background" type="Sprite2D" parent="."]
 self_modulate = Color(0.0792631, 0.0753794, 0.142917, 1)
-z_index = -1
 position = Vector2(512.03, 359.792)
 scale = Vector2(0.999941, 1.00058)
 texture = SubResource("CanvasTexture_0wfyh")
 region_enabled = true
 region_rect = Rect2(0, 0, 1024, 720)
 
-[node name="camera" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(512, 360)
-limit_left = -2000
-limit_top = -2000
-limit_right = 2000
-limit_bottom = 2000
 script = ExtResource("5_tbgi4")
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Button" type="Button" parent="UI"]
-top_level = true
-z_index = 1
-offset_left = 8.0
-offset_top = 659.0
-offset_right = 212.0
-offset_bottom = 709.0
-text = "BUILD COMMAND BLOCK"
