@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dikqpia0nuieu"]
+[gd_scene load_steps=4 format=3 uid="uid://dikqpia0nuieu"]
+
+[ext_resource type="Script" uid="uid://yfe72ykrwmnt" path="res://Contact.gd" id="1_gcn6t"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7mycd"]
 
@@ -11,6 +13,7 @@ scale = Vector2(0.452381, 0.453846)
 texture = SubResource("CanvasTexture_7mycd")
 region_enabled = true
 region_rect = Rect2(0, 0, 50, 50)
+script = ExtResource("1_gcn6t")
 
 [node name="command object input area" type="Area2D" parent="."]
 
@@ -18,5 +21,5 @@ region_rect = Rect2(0, 0, 50, 50)
 position = Vector2(0, -0.000488281)
 shape = SubResource("RectangleShape2D_7mycd")
 
-[connection signal="mouse_entered" from="command object input area" to="." method="_set_mouse_over"]
-[connection signal="mouse_exited" from="command object input area" to="." method="_unset_mouse_over"]
+[connection signal="mouse_entered" from="command object input area" to="." method="set_mouse_hovered"]
+[connection signal="mouse_exited" from="command object input area" to="." method="unset_mouse_hovered"]

@@ -29,3 +29,6 @@ var CommandColors := {
 	CommandFunc.VAR: Color.hex(0xf5428dff),
 	CommandFunc.OUT: Color.hex(0x42f5a7ff)
 }
+
+var IDref: int = 0
+var CurrentHoveredCommand: int = -1

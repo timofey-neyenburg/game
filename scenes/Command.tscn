@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3jjemmtgnjyd"]
 
-[ext_resource type="Script" uid="uid://tj1t1kbwcftx" path="res://src/command_object.gd" id="1_0j55j"]
+[ext_resource type="Script" uid="uid://bldcgbq82syhc" path="res://Command.gd" id="1_dc8g0"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ig7tw"]
 
@@ -22,7 +22,7 @@ scale = Vector2(0.42, 0.433334)
 texture = SubResource("CanvasTexture_ig7tw")
 region_enabled = true
 region_rect = Rect2(0, 0, 200, 120)
-script = ExtResource("1_0j55j")
+script = ExtResource("1_dc8g0")
 
 [node name="command object sprite label" type="Label" parent="."]
 offset_left = -100.0
@@ -48,5 +48,5 @@ shape = SubResource("RectangleShape2D_1bvp3")
 debug_color = Color(0.452707, 0.284945, 0.251053, 0.843137)
 metadata/_edit_lock_ = true
 
-[connection signal="mouse_entered" from="command object area" to="." method="_is_mouse_over_object"]
-[connection signal="mouse_exited" from="command object area" to="." method="_unset_is_mouse_over_object"]
+[connection signal="mouse_entered" from="command object area" to="." method="set_mouse_hover"]
+[connection signal="mouse_exited" from="command object area" to="." method="unset_mouse_hover"]
