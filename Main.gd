@@ -7,7 +7,6 @@ var _selector: CommandSelector
 var _is_selector_active: bool = false
 
 var _trailing_joint: Joint
-var _is_trailing_joint: bool
 
 func _init() -> void:
 	var _commands: Array[Joint] = []
@@ -19,24 +18,22 @@ func _process(delta: float) -> void:
 	_handle_item_menu()
 
 func _handle_new_connection():
-	print("con")
-	print(CE.contact_, " ", CE.new_contact, " ", CE)
 	if CE.new_contact:
-		if not _is_trailing_joint:
+		if _trailing_joint:
 			_trailing_joint = Joint.new()
-			add_child(_trailing_joint)
-			_is_trailing_joint = true
 			if CE.contact_.is_input():
 				_trailing_joint.add_input(CE.contact_)
 			else:
 				_trailing_joint.add_output(CE.contact_)
+			add_child(_trailing_joint)
 		else:
 			if CE.contact_.is_input():
-				_trailing_joint.add_input(CE.contact_, false)
-			else:
 				_trailing_joint.add_output(CE.contact_, false)
-			_is_trailing_joint = false
+			else:
+				_trailing_joint.add_input(CE.contact_, false)
+
 			CE.close_connection()
+			_trailing_joint = null
 
 func _handle_item_menu():
 	# Calls twice, fuck me
